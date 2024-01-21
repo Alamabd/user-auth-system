@@ -12,7 +12,9 @@ route.post('/', (req, res) => {
         return res.status(401).json({ error: "Invalid credentials" })
     }
 
-    const token = jwt.sign(user[0], process.env.SECRET_KEY);
+    const expire = 60 * 60
+    // Generate token
+    const token = jwt.sign(user[0], process.env.SECRET_KEY, {expiresIn: expire});
     res.json({
         accesstoken: token
     })
