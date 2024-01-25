@@ -26,9 +26,9 @@ Install package modules or dependencies
 ```
 
 ## Configure
-| host      | port   |
-|-----------|--------|
-| localhost | 3000   |
+| host      | port   | Database|
+|-----------|--------|---------|
+| localhost | 3000   | ./index.js line 10|
 
 If you want to change, edit the .env file
 
