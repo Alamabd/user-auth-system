@@ -9,6 +9,19 @@ app.use(bodyparser.json())
 
 app.use('/', require('./routers'))
 
+// Database
+const user = [
+    // Password 123
+    {id: 1, username: "john", password: "$2b$10$72oFwwNUqNng8/eAAusq2O/jHc8IcaEFIkHuTMhvWG0JW1gJJUkeK"}
+]
+
+// Saving Userto local
+app.use((req, res, next) => {
+    req.locals = req.locals || {}
+    req.locals.user = user
+    next()
+})
+
 // Error Handling
 app.use((req, res, next) => {
     const err = new Error('Not found')

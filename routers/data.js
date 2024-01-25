@@ -4,9 +4,11 @@ const jwt = require('jsonwebtoken')
 const route = express.Router()
 
 route.get('/', (req, res) => {
-    const {token} = req.query
+    const {accesstoken} = req.query
 
-    jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+    console.log(accesstoken)
+
+    jwt.verify(accesstoken, process.env.SECRET_KEY, (err, decoded) => {
         if (err) {
             return res.status(401).json({ error: "Invalid accesstoken" })
         } else {

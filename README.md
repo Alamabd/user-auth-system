@@ -14,20 +14,19 @@ Install package modules or dependencies
   npm i
 ```
 
-## Usage 📝
-
-| Config  |                   |
-|--------------|-------------------|
-| host         | localhost         |
-| port         | 3000              |
+## Configure
+| host      | port   |
+|-----------|--------|
+| localhost | 3000   |
 
 If you want to change, edit the .env file
 
+## Usage 📝
 
-| Request      | Url        |
-|--------------|-------------------|
-| POST         | /login            |
-| GET          | /data             |
+| Request | Url       | Body               | Params      |
+|---------|-----------|--------------------|-------------|
+| POST    | /login    | username: string <br/> password: string | -            |
+| GET     | /data     |   -                 | accesstoken: string |
 
 
 ## Bugs and Issues ⚠️
