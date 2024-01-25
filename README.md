@@ -2,6 +2,17 @@
 
 This project is an implementation of a simple user authentication system that allows users to log in, and retrieve information. By using nodejs as runtime and expressjs framework
 
+## what is learned :book: 
+
+- #### Token based with jwt
+- #### Request limit
+
+
+## Tech Used
+
+<image src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" />
+<image src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+
 ## instalation 🚀
 
 clone this project
