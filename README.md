@@ -28,16 +28,21 @@ Install package modules or dependencies
 ## Configure
 | host      | port   | Database|
 |-----------|--------|---------|
-| localhost | 3000   | ./index.js line 10|
+| localhost | 3000   | DBuser|
+|||DBhost|
+|||DBdatabase|
+|||DBpassword|
+|||DBport|
 
 If you want to change, edit the .env file
 
 ## Usage 📝
 
-| Request | Url       | Body               | Params      |
-|---------|-----------|--------------------|-------------|
-| POST    | /login    | username: string <br/> password: string | -            |
-| GET     | /data     |   -                 | accesstoken: string |
+| Request| Url| Body | Params |
+|---|---|---|---|
+| POST | /registration | username: string <br/> password: string | - |
+| POST | /login | username: string <br/> password: string | - |
+| GET | /data | - | accesstoken: string |
 
 
 ## Bugs and Issues ⚠️
