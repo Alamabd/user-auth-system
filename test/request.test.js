@@ -18,3 +18,16 @@ describe('POST /registration', () => {
         expect(res.statusCode).toBe(201)
     })
 })
+
+/* @body {string} username, password */
+describe('POST /login', () => {
+    it('responds with json', async () => {
+        const res = await request(route)
+            .post('/login')
+            .send({username: 'john', password: '123'})
+            .set('Accept', 'application/json')
+
+        console.log(res.body);
+        expect(res.statusCode).toBe(200)
+    })
+})
