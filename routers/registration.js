@@ -29,12 +29,21 @@ route.post('/', async (req, res) => {
         if(encryption(username)) {    
             await pool.query(`INSERT INTO public.users(username, password)VALUES ('${username}', '${encryp}')`)
         
-            res.send('succes')
+            res.status(201).json({
+                status: "success",
+                message: "data added successfully"
+            })
         } else {
-            res.send('failed')
+            res.status(500).json({
+                status: "error",
+                message: "internal server error"
+            })
         }
     } catch (error) {
-        res.send(error)
+        res.status(400).json({
+            status: "error",
+            message: "invalid request"
+        })
     }
 })
 
