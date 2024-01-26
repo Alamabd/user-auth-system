@@ -22,6 +22,8 @@ route.get('/', (req, res) => {
 
 route.use('/data', require('./data'))
 
+route.use('/registration', require('./registration'))
+
 route.use('/login', require('./login'))
 
 module.exports = route
