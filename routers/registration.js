@@ -5,7 +5,7 @@ const pool = require('../utils/db')
 const generateToken = require('../middleware/auth')
 
 /*  
-Request Login Method post
+Request Registration Method post
 @body {string} username, password
 */
 route.post('/', async (req, res) => {    
