@@ -2,6 +2,7 @@ const express = require('express')
 const bcrypt = require('bcrypt')
 const route = express.Router()
 const pool = require('../utils/db')
+const generateToken = require('../middleware/auth')
 
 /*  
 Request Login Method post
@@ -31,6 +32,10 @@ route.post('/', async (req, res) => {
         
             res.status(201).json({
                 status: "success",
+                accesstoken: generateToken({
+                    username: username,
+                    password: password
+                }),
                 message: "data added successfully"
             })
         } else {
