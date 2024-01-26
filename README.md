@@ -6,6 +6,7 @@ This project is an implementation of a simple user authentication system that al
 
 - #### Token based with jwt
 - #### Request limit
+- #### data encryption
 
 
 ## Tech Used
