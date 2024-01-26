@@ -1,4 +1,11 @@
 {
+  "name": "user-auth-system",
+  "description": "This project is an implementation of a simple user authentication system that allows users to log in, and retrieve information. By using nodejs as runtime and expressjs framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
@@ -7,5 +14,12 @@
     "express-rate-limit": "^7.1.5",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.3"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
