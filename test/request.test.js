@@ -13,6 +13,8 @@ describe('POST /registration', () => {
             .post('/registration')
             .send({username: 'john', password: '123'})
             .set('Accept', 'application/json')
+
+        console.log(res.body);
         expect(res.statusCode).toBe(201)
     })
 })
