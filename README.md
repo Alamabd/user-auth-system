@@ -39,7 +39,7 @@ If you want to change, edit the .env file
 
 ## Usage 📝
 
-| Request| Url| Body | Params |
+| Method| Url| Body | Params |
 |---|---|---|---|
 | POST | /registration | username: string <br/> password: string | - |
 | POST | /login | username: string <br/> password: string | - |
