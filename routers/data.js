@@ -1,20 +1,25 @@
 const express = require('express')
-const jwt = require('jsonwebtoken')
+const { verifyToken } = require('../middleware/auth')
 
 const route = express.Router()
 
 route.get('/', (req, res) => {
     const {accesstoken} = req.query
-    const key = process.env.SECRET_KEY
 
-    jwt.verify(accesstoken, key, (err, decoded) => {
-        if (err) {
-            return res.status(401).json({ error: "Invalid accesstoken" })
+    verifyToken(accesstoken, (result) => {
+        if(result) {
+            // provide data to users
+            return res.status(200).json({ 
+                status: 'succes',
+                data: result
+            })
         } else {
-            const result = {...decoded, password: '123'}
-            res.json(result);
+            return res.status(401).json({ 
+                status: 'error',
+                error: "Invalid accesstoken",
+            })
         }
-    });
+    })
 })
 
 module.exports = route
