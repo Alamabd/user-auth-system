@@ -6,13 +6,15 @@ This project is an implementation of a simple user authentication system that al
 
 - #### Token based with jwt
 - #### Request limit
-- #### data encryption
+- #### Data encryption
+- #### Database Posgresql
 
 
 ## Tech Used
 
 <image src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" />
 <image src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+<image src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" />
 
 ## instalation 🚀
 
@@ -26,7 +28,7 @@ Install package modules or dependencies
   npm i
 ```
 
-## Configure
+### Configure
 | host      | port   | Database|
 |-----------|--------|---------|
 | localhost | 3000   | DBuser|
@@ -36,6 +38,13 @@ Install package modules or dependencies
 |||DBport|
 
 If you want to change, edit the .env file
+
+### database table
+| name | data type | not null | primary key |
+|--- | --- | --- | --- |
+| id | integer | yes | yes |
+| username | text | | |
+| password | text | | |
 
 ## Usage 📝
 
