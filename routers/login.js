@@ -2,7 +2,7 @@ const express = require('express')
 const bcrypt = require('bcrypt')
 const route = express.Router()
 const pool = require('../utils/db')
-const generateToken = require('../middleware/auth')
+const { generateToken } = require('../middleware/auth')
 
 /*  
 Request Login Method post
