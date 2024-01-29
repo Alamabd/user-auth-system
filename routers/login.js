@@ -1,8 +1,8 @@
 const express = require('express')
-const bcrypt = require('bcrypt')
 const route = express.Router()
 const pool = require('../utils/db')
 const { generateToken } = require('../middleware/auth')
+const { compare } = require('../middleware/bcrypt')
 
 /*  
 Request Login Method post
@@ -15,7 +15,7 @@ route.post('/', async (req, res) => {
         const query = await pool.query(`SELECT id, username, password FROM public.users WHERE username = '${username}'`)
 
         // Check a password
-        const match = await bcrypt.compare(password, query.rows[0].password)
+        const match = await compare(password, query.rows[0].password)
 
         if(match) {
             res.status(200).json({

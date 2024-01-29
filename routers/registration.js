@@ -1,8 +1,8 @@
 const express = require('express')
-const bcrypt = require('bcrypt')
 const route = express.Router()
 const pool = require('../utils/db')
-const generateToken = require('../middleware/auth')
+const { generateToken } = require('../middleware/auth')
+const { encryption } = require('../middleware/bcrypt')
 
 /*  
 Request Registration Method post
@@ -10,20 +10,6 @@ Request Registration Method post
 */
 route.post('/', async (req, res) => {    
     const {username, password} = req.body
-    
-    /* 
-    @arg {string} data 
-    */
-    async function encryption(data) {
-        const saltRounds = 10
-        try {
-            const hash = await bcrypt.hash(data, saltRounds)
-            return hash
-        } catch (error) {
-            return false   
-        }
-    }
-    
     
     try {
         const encryp = await encryption(password)
